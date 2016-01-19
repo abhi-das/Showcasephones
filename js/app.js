@@ -16,7 +16,7 @@ phoneApp.config(["$routeProvider",
 				controller: "PhoneDetailCtrl"
 			})
 			.otherwise({
-				redirestTo: "/phones"
+				redirectTo: "/phones"
 			})
 	}
 ]);
