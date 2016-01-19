@@ -9,8 +9,25 @@ body{
     background: url(../images/body-background.png) #eae6d1;
 }
 
-.site-footer{
+/* .site-footer{
 	position: absolute;
 	bottom: 0;
 	width: 100%;
+} */
+
+ul{
+	list-style: none;
+}
+.phone-list li{
+	
+	background: #fff;
+	border-radius: 5px 5px;
+	margin-bottom: 10px;
+	padding: 5px 20px;
+	
+}
+
+.phone-list img{
+	width: 100px;
+	height: 100px;
 }
