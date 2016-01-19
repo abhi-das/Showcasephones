@@ -1,6 +1,6 @@
 "use strict";
 
-var phoneApp = angular.module("phApp",["ngRoute","PhoneListCtrl","PhoneDetailCtrl"]);
+var phoneApp = angular.module("phApp",["ngRoute","appCtrl"]);
 
 phoneApp.config(["$routeProvider", 
 
