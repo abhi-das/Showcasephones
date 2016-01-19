@@ -8,3 +8,9 @@ body{
     padding: 0px 0 20px 0px;
     background: url(../images/body-background.png) #eae6d1;
 }
+
+.site-footer{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
