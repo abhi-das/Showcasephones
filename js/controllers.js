@@ -36,8 +36,20 @@ appCtrl.controller("PhoneListCtrl",["$scope", function($scope){
 	
 }]);
 
-appCtrl.controller("PhoneDetailCtrl",["$scope", function($scope){
+appCtrl.controller("PhoneDetailCtrl",["$scope", "$http", "$routeParams", function($scope, $http, $routeParams){
 	
 	console.log("phone detail controller init...");
+	$scope.phone = null;
+	
+	$http({
+		method: "POST",
+		url: "data/phones/"+$routeParams.phoneId+".json"
+	}).then(function successCallback(res){
+		console.log(res);
+		$scope.phone = res;
+	}, function errorCallback(err){
+		console.log(err);
+	});
+	
 	
 }]);
