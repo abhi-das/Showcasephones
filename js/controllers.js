@@ -42,12 +42,12 @@ appCtrl.controller("PhoneDetailCtrl",["$scope", "$http", "$routeParams", functio
 	$scope.phone = null;
 	
 	$http({
-		method: "POST",
-		url: "data/phones/"+$routeParams.phoneId+".json"
-	}).then(function successCallback(res){
+		url: "data/phones/"+$routeParams.phoneId+".json",
+		method: "POST"
+	}).success(function(res){
 		console.log(res);
 		$scope.phone = res;
-	}, function errorCallback(err){
+	}).error(function(err){
 		console.log(err);
 	});
 	
