@@ -41,7 +41,7 @@ appCtrl.controller("PhoneDetailCtrl",["$scope", "$http", "$routeParams", functio
 	console.log("phone detail controller init...");
 	$scope.phone = null;
 	
-	$http.get('phones/' + $routeParams.phoneId + '.json').success(function(data) {
+	$http.get('data/phones/' + $routeParams.phoneId + '.json').success(function(data) {
       $scope.phone = data;
 	  console.log( $scope.phone );
     });
