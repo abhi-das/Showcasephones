@@ -41,21 +41,21 @@ appCtrl.controller("PhoneDetailCtrl",["$scope", "$http", "$routeParams", functio
 	console.log("phone detail controller init...");
 	$scope.phone = null;
 	
-	$http.get('data/phones/' + $routeParams.phoneId + '.json').success(function(data) {
+	/*$http.get('data/phones/' + $routeParams.phoneId + '.json').success(function(data) {
       $scope.phone = data;
 	  console.log( $scope.phone );
-    });
+    });*/
 	
 	
-	/*$http({
-		url: "data/phones/"+$routeParams.phoneId+".json",
-		method: "POST"
+	$http({
+		url: 'data/phones/' + $routeParams.phoneId + '.json',
+		method: 'GET'
 	}).success(function(res){
 		console.log(res);
 		$scope.phone = res;
 	}).error(function(err){
 		console.log(err);
-	});*/
+	});
 	
 	
 }]);
