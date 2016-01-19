@@ -41,7 +41,13 @@ appCtrl.controller("PhoneDetailCtrl",["$scope", "$http", "$routeParams", functio
 	console.log("phone detail controller init...");
 	$scope.phone = null;
 	
-	$http({
+	$http.get('phones/' + $routeParams.phoneId + '.json').success(function(data) {
+      $scope.phone = data;
+	  console.log( $scope.phone );
+    });
+	
+	
+	/*$http({
 		url: "data/phones/"+$routeParams.phoneId+".json",
 		method: "POST"
 	}).success(function(res){
@@ -49,7 +55,7 @@ appCtrl.controller("PhoneDetailCtrl",["$scope", "$http", "$routeParams", functio
 		$scope.phone = res;
 	}).error(function(err){
 		console.log(err);
-	});
+	});*/
 	
 	
 }]);
