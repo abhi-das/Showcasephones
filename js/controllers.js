@@ -1,8 +1,8 @@
 'use strict';
 
-var appCtrl = angular.module("appCtrl",[]);
+var appCtrls = angular.module("appCtrl",[]);
 
-appCtrl.controller("PhoneListCtrl",["$scope", function($scope){
+appCtrls.controller("PhoneListCtrl",["$scope", function($scope){
 	
 	/* console.log("phone list controller init..."); */
 	
@@ -36,7 +36,7 @@ appCtrl.controller("PhoneListCtrl",["$scope", function($scope){
 	
 }]);
 
-appCtrl.controller("PhoneDetailCtrl",["$scope", "$http", "$routeParams", function($scope, $http, $routeParams){
+appCtrls.controller("PhoneDetailCtrl",["$scope", "$http", "PhoneDetailSer" ,"$routeParams", function($scope, $http, PhoneDetailSer, $routeParams){
 	
 	console.log("phone detail controller init...");
 	$scope.phone = null;
@@ -47,7 +47,7 @@ appCtrl.controller("PhoneDetailCtrl",["$scope", "$http", "$routeParams", functio
     });*/
 	
 	
-	$http({
+	/*$http({
 		url: 'data/phones/' + $routeParams.phoneId + '.json',
 		method: 'GET'
 	}).success(function(res){
@@ -55,7 +55,12 @@ appCtrl.controller("PhoneDetailCtrl",["$scope", "$http", "$routeParams", functio
 		$scope.phone = res;
 	}).error(function(err){
 		console.log(err);
-	});
+	});*/
 	
+	PhoneDetailSer.get({phId: $routeParams.phoneId}, function(dt){
+		//console.log(dt);
+		$scope.phone = dt;
+	});
+
 	
 }]);
