@@ -31,3 +31,32 @@ ul{
 	width: 100px;
 	height: 100px;
 }
+
+.phone-cat{
+	margin: 10px 40px;
+}
+
+.phone-detail-info{
+	background: #fff;
+	padding: 20px;
+	margin-bottom: 20px;
+}
+
+.phone-thumbs{
+	overflow: hidden;
+}
+
+.phone-thumbs li{
+	float: left;
+	margin-right: 20px;
+}
+
+.phone-short-info{
+	width: 90%;
+	
+}
+.phone-pic{
+	float: left;
+	margin-right: 30px;
+	margin-left: 20px;
+}
