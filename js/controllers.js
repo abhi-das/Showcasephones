@@ -2,12 +2,12 @@
 
 var appCtrls = angular.module("appCtrl",[]);
 
-appCtrls.controller("PhoneListCtrl",["$scope", function($scope){
+appCtrls.controller("PhoneListCtrl",["$scope", "PhoneDetailSer", function($scope, PhSer){
 	
 	/* console.log("phone list controller init..."); */
 	
 	
-	$scope.phones = [
+	/*$scope.phones = [
 		{
 			'name': 'Nexus S',
 			'id': 'nexus-s',
@@ -29,9 +29,23 @@ appCtrls.controller("PhoneListCtrl",["$scope", function($scope){
 			'snippet': 'The Next, Next Generation tablet.',
 			'age': 2
 		}
-	];
+	];*/
+	
+	//OPTION - 1 - See example in app-services.js
+	//$scope.phones = PhSer.query();
+	
+	//OPTION - 2 - See example in app-services.js
+	$scope.phones = PhSer.query({
+		phoneId: 'phones',
+		isArray: true
+	});
+	
+	//OPTION - 3	
+	//$scope.phones = PhSer.helloNewMethod();
 	
 	$scope.orderProp = 'age';
+	
+	//console.log( $scope.phones );
 	
 	
 }]);
@@ -57,7 +71,7 @@ appCtrls.controller("PhoneDetailCtrl",["$scope", "$http", "PhoneDetailSer" ,"$ro
 		console.log(err);
 	});*/
 	
-	PhoneDetailSer.get({phId: $routeParams.phoneId}, function(dt){
+	PhoneDetailSer.get({phoneId: $routeParams.phoneId}, function(dt){
 		//console.log(dt);
 		$scope.phone = dt;
 	});

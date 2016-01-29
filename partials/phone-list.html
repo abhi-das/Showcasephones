@@ -1,14 +1,14 @@
-<div ng-controller="PhoneListCtrl">
-	<div class="col-md-2">
-		<select ng-model="orderProp">
-		  <option value="name">Alphabetical</option>
-		  <option value="age">Newest</option>
-		</select>
-	</div>
-	<div  class="col-md-10">
+<div>
+	<div  class="col-md-6">
+		<div class="phone-cat">
+			<select ng-model="orderProp">
+			  <option value="name">Alphabetical</option>
+			  <option value="age">Newest</option>
+			</select>
+		</div>
 		<ul class="phone-list">
 			<li ng-repeat="phone in phones | orderBy:orderProp">
-				<a href="#/phones/{{phone.id}}"><img ng-src="{{phone.img}}"></a>
+				<a href="#/phones/{{phone.id}}"><img ng-src="{{phone.imageUrl}}"></a>
 				<a href="#/phones/{{phone.id}}">{{phone.name}}</a>
 				<p>{{phone.snippet}}</p>
 			</li>

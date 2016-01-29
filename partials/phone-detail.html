@@ -1,11 +1,13 @@
-<div>
+<div class="phone-detail-info">
 	
-	<img ng-src="{{phone.images[0]}}" class="phone">
-
 	<h1>{{phone.name}}</h1>
+	
+	<img ng-src="{{phone.images[0]}}" class="phone-pic">
 
-	<p>{{phone.description}}</p>
-
+	<p class="phone-short-info" >{{phone.description}}</p>
+	
+	<div class="clearfix"></div>
+	<h2 >Gallery</h2>
 	<ul class="phone-thumbs">
 	  <li ng-repeat="img in phone.images">
 		<img ng-src="{{img}}">
